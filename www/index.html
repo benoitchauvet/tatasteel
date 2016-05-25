@@ -1,21 +1,33 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title>Titre de la page</title>
+
+    <link href="css/style.css" rel="stylesheet"/>
+
+    <link href="css/print.css" rel="stylesheet" media="print"/>
+
+
+    <!--<style>
+        header
+        {
+            background-color:hotpink;
+        }
+    </style>-->
 </head>
 <body>
     <header>
         <img src="/images/logo.png" alt="logo" />
-        <h1>Mon site</h1>
+        <h1 class="fun">Mon site</h1>
     </header>
 
-    <nav>
+    <nav id="menuPpal">
         <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Musique</a></li>
-            <li><a href="#">Sport</a></li>
-            <li><a href="#">Cinema</a></li>
+            <li><a class="menuItem fun" href="#">Accueil</a></li>
+            <li><a class="menuItem" href="#">Musique</a></li>
+            <li><a class="menuItem" href="#sport">Sport</a></li>
+            <li><a class="menuItem" href="#">Cinema</a></li>
         </ul>
     </nav>
 
@@ -45,9 +57,10 @@
             <h2>Clapton : nouvel album</h2>
             <p><img src="/images/clapton.jpg" alt="..." />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare congue odio eu luctus. Ut consectetur pulvinar risus nec mollis. Aliquam libero risus, aliquet eu mauris vel, lobortis pretium ligula. In laoreet leo nunc, in faucibus elit dapibus id. Duis magna mi, fermentum nec elit sit amet, sodales congue neque.</p>
         </article>
+        <div class="clear"/>
     </section>
 
-    <section>
+    <section id="sport">
         <header>Sport</header>
         <article>
             <h2>Tsonga en finale !</h2>
@@ -73,6 +86,7 @@
             <h2>Tsonga en finale !</h2>
             <p><img src="/images/clapton.jpg" alt="..." />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare congue odio eu luctus. Ut consectetur pulvinar risus nec mollis. Aliquam libero risus, aliquet eu mauris vel, lobortis pretium ligula. In laoreet leo nunc, in faucibus elit dapibus id. Duis magna mi, fermentum nec elit sit amet, sodales congue neque.</p>
         </article>
+        <div class="clear" />
     </section>
     <footer>Pied de page</footer>
 </body>

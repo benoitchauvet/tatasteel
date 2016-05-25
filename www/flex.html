@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+  box-sizing: border-box; /* pour maîtriser width et flex-basis */
+}
+
+html {
+  display: flex; flex-direction: column; /* correction bug IE de min-height non appliqué à body */
+}
+
+body {
+  display: flex; /* crée un contexte flex pour ses enfants */
+  flex-direction: column; /* affichage vertical */
+  min-height: 100vh; /* toute la hauteur du viewport */
+  padding: 1em;
+  font-size:larger;
+}
+.wrapper {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto; /* occupe la hauteur restante */
+
+  display: flex; /* crée un contexte flex pour ses enfants */
+  flex-direction:row;  
+}
+
+nav,
+aside {
+  flex-basis: 10em;
+}
+article {
+  flex-grow: 1; /* occupe la largeur restante */
+}
+nav {
+  order: -1; /* nav s'affiche en premier */
+}
+
+
+@media (max-width: 640px) {
+  .wrapper {
+    flex-direction: column; /* affichage vertical */
+  }
+  nav,
+  aside {
+    _width: auto; /* pour écraser la valeur 10em */
+  }
+  nav,
+  aside,
+  article {
+    flex-basis: auto; /* pour écraser la valeur 0, due au flex: 1 */
+  }
+  nav {
+    order: 0; /* nav reprend sa place */
+  }
+}
+
+
+/* Decoration */
+body {
+  margin: 0;
+  background: #999;
+  font-family: arial, sans-serif;
+}
+
+header,
+nav,
+aside,
+article,
+footer {
+  margin: .4em;
+  padding: 1em;
+  border-radius: 6px;
+}
+header {
+  background: #ffeebb;
+}
+nav {
+  background: #ccccff;
+}
+aside {
+  background: #ccccff;
+}
+article {
+  background: #dddd88;
+}
+footer {
+  background: #ffeebb;
+}
+</style>
+</head>
+<body>
+  <header>header</header>
+
+  <div class="wrapper">
+   <article>article</article>
+    <nav>navigation</nav>
+    <aside>aside</aside>
+  </div> 
+
+  <footer>footer</footer>
+</body>
+
+</html>
