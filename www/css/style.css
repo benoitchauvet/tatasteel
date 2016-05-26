@@ -1,95 +1,78 @@
-﻿*
-{
-    /*margin:0;
-    padding:0;*/
+﻿*{
+    font-family:Arial;
 }
 
-body
-{
-     font-family:Calibri;
-     /* centrer : width et margin auto */
-     width:1000px;
-     margin:auto;
-     background-color:#bdbdbd;
- }
-
-header {
-    padding: 10px;
-    /*bord arrondi*/
-    border-radius: 5px;
-    -moz-box-shadow: #808080 12px 10px;
-    -webkit-box-shadow: #808080 12px 10px;
-    box-shadow: #808080 12px 10px;
-    background-color: rgba(238, 200, 17, 0.54);
-}
-
-#menuPpal
-{
-    background:#00ff21;
-}
-
-.menuItem
-{
-   color:#fff;
-}
-
-.menuItem:hover
-{
-    background-color:red;
-}
-
-.fun
-{
-    font-family:'Comic Sans MS';
-}
-
-h1.fun
-{
-    text-shadow:hotpink 10px 10px 5px;
-}
-
-.clear
-{
-    clear:both;
-}
-
+header, 
+nav, 
+section, 
+footer,
 article
 {
-    width:300px;
-    border:1px dashed red;
-    margin:5px;
-    padding:5px;
     box-sizing:border-box;
-    float:left;
+    border:1px solid black;
+    border-radius:5px;
+    margin:5px 0px; 
+    padding:5px;
 }
 
-@media (max-width:1000px)
+body>header
 {
-    body
-    {
-        width:100%;
-    }
-
+    display:flex;
 }
 
-@media(orientation:landscape)
+    body>header h1
+    {
+        text-align:center;
+        flex-grow:1;
+    }
+
+#menuPpal ul
 {
-    body
-    {
-        width:80%;
-        background:hotpink;
-    }
-
-    article{
-        width:450px;
-    }
+    display:flex;
+    margin:0;
+    padding:0;
+    list-style-type:none;
+    justify-content:space-around;
 }
 
-@media (max-width:640px) {
-    article
+section
+{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+
+    section header
     {
-        width:initial;
+        flex-basis:100%;
     }
 
+    section article 
+    {
+        flex-basis:32%;
+    }
 
+    article p
+    {
+        text-align:justify;
+    }
+
+    article img
+    {
+        float:left;
+        margin-right:5px;
+        margin-top:5px;
+    }
+
+@media (max-width:640px)
+{
+    #wrapper1
+    {
+        display:flex;
+    }
+
+    #menuPpal ul 
+    {
+        flex-direction:column;
+    }
 }
