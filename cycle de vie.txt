@@ -1,0 +1,32 @@
+Demande de la page :
+
+Réception de la requête par le gestionnaire ASP.net qui détermine si la page doit être chargée et exécutée, où si elle doit être servie via le cache
+
+Démarrage
+Début du cycle de vie de la page. Les éléments suivants sont définis :
+Request
+Response
+IsPostback
+UICulture
+
+Initialisation de la page
+Définition des contrôles de la page
+Application des thèmes éventuels
+A ce stade, les propriétés des contrôles ont encore leur valeur initiale (postback pas encore pris en compte)
+
+Chargement
+S’il s’agit d’un postback, les propriétés des contrôles sont chargées à partir du Viewstate
+
+Validation
+Appel de la méthode Validate des contrôles validateurs de la page. >> définition de leur propriété IsValid
+
+Gestion des événements
+Si postback, les gestionnaires d’événements sont appelés
+
+Rendu
+Appel de la méthode Render de chaque contrôle de la page, qui écrit dans l’OutputStream de l’objet Response de la page
+
+Déchargement
+Lorsque la page a été transmise au client et est prête à être supprimée
+Déchargement des propriétés de la page (Response, Request) et nettoyage éventuel
+

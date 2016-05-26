@@ -1,0 +1,52 @@
+Utilisation des événements :
+
+PreInit
+Création de de contrôles dynamqiues
+Définition d’une page maître
+Définition de la propriété Theme
+
+Init
+Déclenché quand tous les contrôles ont été initialisés
+Lecture ou initialisation des propriétés de contrôles
+
+InitComplete
+Pour traitements qui nécessitent que toute la page soit initialisée
+
+PreLoad
+Pour traitements à effectuer avant le chargement du ViewState
+Après cet événement, la page charge le ViewState pour elle et ses contrôles, puis traite les données postées dans sa propriété Request.
+
+Load
+Appel de la méthode OnLoad de la page, puis appel récursif sur ses descendants
+Définition des propriétés de contrôles
+Etablissement de connexions de bases de données
+
+Evénements de contrôle
+Traitement des événements de contrôles (ex : Click pour Button, TextChanged pour TextBox, …)
+Si la page utilise des validateurs, vérifier la propriété IsValid de la page et/ou des contrôles avant d’exécuter tout traitement.
+
+LoadComplete
+Pour traitements qui nécessitent que tous les contrôles de la page soient chargés
+
+PreRender
+Avant le déclenchement de cet événement :
+La page appelle la méthode EnsureChildControls pour chaque contrôle et pour elle-même (pour s’assurer que tous les contrôles enfants ont été créés)
+Les contrôles disposant d’une propriété DataSourceID effectue sa liaison de données par la méthode 
+
+DataBind (cf liaison de données).
+Pour apporter des modifications définitives au contenu de la page ou de ses contrôles
+
+SaveStateComplete
+Avant le déclenchament de cet événement, le ViewState est enregistré. Toute modification ultérieure sera ignorée
+Pour traitements qui requièrent l’enregistrement du ViewState mais ne modifient pas les contrôles
+
+Render
+Render n’est pas un événement, mais une méthode appelée par page sur chacun de ses contrôles.
+Définit  le balisage du contrôle envoyé au navigateur (HTML)
+Pour définir le rendu de contrôles personnalisés
+
+Unload
+Pour le nettoyage des contrôles spécifiques : fermeture des connexions, des fichiers ouverts…
+A ce stade, le flux de sortie a déjà été envoyé au client >> l’appel à Response.Write déclenchera une exception
+
+
